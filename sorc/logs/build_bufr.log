@@ -1,0 +1,83 @@
+Lmod has detected the following error: The following module(s) are unknown:
+"build_v8.0.0-cray-intel"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore-cache load "build_v8.0.0-cray-intel"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+No modules loaded
+/bin/rm -f  *.lst *.o *.mod
+c -O -fp-model precise  -convert big_endian -assume noold_ldout_format -FR    -I PARA_RANGE.f90
+make: c: Command not found
+make: [makefile:99: PARA_RANGE.o] Error 127 (ignored)
+c -O -fp-model precise  -convert big_endian -assume noold_ldout_format -FR  -g -traceback  -fpe0 -ftrapuv  -check all  -I PARA_RANGE.f90
+make: c: Command not found
+make: [makefile:102: PARA_RANGE.o] Error 127 (ignored)
+c -O -fp-model precise  -convert big_endian -assume noold_ldout_format   -I VRBLS2D_mod.f
+make: c: Command not found
+make: [makefile:93: VRBLS2D_mod.o] Error 127 (ignored)
+c -O -fp-model precise  -convert big_endian -assume noold_ldout_format  -g -traceback  -fpe0 -ftrapuv  -check all  -I VRBLS2D_mod.f
+make: c: Command not found
+make: [makefile:96: VRBLS2D_mod.o] Error 127 (ignored)
+c -O -fp-model precise  -convert big_endian -assume noold_ldout_format   -I VRBLS3D_mod.f
+make: c: Command not found
+make: [makefile:93: VRBLS3D_mod.o] Error 127 (ignored)
+c -O -fp-model precise  -convert big_endian -assume noold_ldout_format  -g -traceback  -fpe0 -ftrapuv  -check all  -I VRBLS3D_mod.f
+make: c: Command not found
+make: [makefile:96: VRBLS3D_mod.o] Error 127 (ignored)
+c -O -fp-model precise  -convert big_endian -assume noold_ldout_format   -I MASKS_mod.f
+make: c: Command not found
+make: [makefile:93: MASKS_mod.o] Error 127 (ignored)
+c -O -fp-model precise  -convert big_endian -assume noold_ldout_format  -g -traceback  -fpe0 -ftrapuv  -check all  -I MASKS_mod.f
+make: c: Command not found
+make: [makefile:96: MASKS_mod.o] Error 127 (ignored)
+c -O -fp-model precise  -convert big_endian -assume noold_ldout_format   -I SOIL_mod.f
+make: c: Command not found
+make: [makefile:93: SOIL_mod.o] Error 127 (ignored)
+c -O -fp-model precise  -convert big_endian -assume noold_ldout_format  -g -traceback  -fpe0 -ftrapuv  -check all  -I SOIL_mod.f
+make: c: Command not found
+make: [makefile:96: SOIL_mod.o] Error 127 (ignored)
+c -O -fp-model precise  -convert big_endian -assume noold_ldout_format   -I WRFBUFR.f
+make: c: Command not found
+make: [makefile:93: WRFBUFR.o] Error 127 (ignored)
+c -O -fp-model precise  -convert big_endian -assume noold_ldout_format  -g -traceback  -fpe0 -ftrapuv  -check all  -I WRFBUFR.f
+make: c: Command not found
+make: [makefile:96: WRFBUFR.o] Error 127 (ignored)
+c -O -fp-model precise  -convert big_endian -assume noold_ldout_format   -I PROF_FV3SAR_NET.f
+make: c: Command not found
+make: [makefile:93: PROF_FV3SAR_NET.o] Error 127 (ignored)
+c -O -fp-model precise  -convert big_endian -assume noold_ldout_format  -g -traceback  -fpe0 -ftrapuv  -check all  -I PROF_FV3SAR_NET.f
+make: c: Command not found
+make: [makefile:96: PROF_FV3SAR_NET.o] Error 127 (ignored)
+c -O -fp-model precise  -convert big_endian -assume noold_ldout_format   -I iw3jdn.f
+make: c: Command not found
+make: [makefile:93: iw3jdn.o] Error 127 (ignored)
+c -O -fp-model precise  -convert big_endian -assume noold_ldout_format  -g -traceback  -fpe0 -ftrapuv  -check all  -I iw3jdn.f
+make: c: Command not found
+make: [makefile:96: iw3jdn.o] Error 127 (ignored)
+c -O -fp-model precise  -convert big_endian -assume noold_ldout_format   -I w3fs26.f
+make: c: Command not found
+make: [makefile:93: w3fs26.o] Error 127 (ignored)
+c -O -fp-model precise  -convert big_endian -assume noold_ldout_format  -g -traceback  -fpe0 -ftrapuv  -check all  -I w3fs26.f
+make: c: Command not found
+make: [makefile:96: w3fs26.o] Error 127 (ignored)
+c -O -fp-model precise  -convert big_endian -assume noold_ldout_format   -I w3movdat.f
+make: c: Command not found
+make: [makefile:93: w3movdat.o] Error 127 (ignored)
+c -O -fp-model precise  -convert big_endian -assume noold_ldout_format  -g -traceback  -fpe0 -ftrapuv  -check all  -I w3movdat.f
+make: c: Command not found
+make: [makefile:96: w3movdat.o] Error 127 (ignored)
+c -O -fp-model precise  -convert big_endian -assume noold_ldout_format   -I w3reddat.f
+make: c: Command not found
+make: [makefile:93: w3reddat.o] Error 127 (ignored)
+c -O -fp-model precise  -convert big_endian -assume noold_ldout_format  -g -traceback  -fpe0 -ftrapuv  -check all  -I w3reddat.f
+make: c: Command not found
+make: [makefile:96: w3reddat.o] Error 127 (ignored)
+o rrfs_bufr.x PARA_RANGE.o VRBLS2D_mod.o VRBLS3D_mod.o MASKS_mod.o SOIL_mod.o WRFBUFR.o PROF_FV3SAR_NET.o iw3jdn.o w3fs26.o w3movdat.o w3reddat.o     -L -lnetcdf -lnetcdff 
+make: o: Command not found
+make: [makefile:87: rrfs_bufr.x] Error 127 (ignored)

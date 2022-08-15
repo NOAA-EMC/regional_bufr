@@ -1,0 +1,21 @@
+Lmod has detected the following error: The following module(s) are unknown:
+"build_v8.0.0-cray-intel"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore-cache load "build_v8.0.0-cray-intel"
+
+Also make sure that all modulefiles written in TCL start with the string
+#%Module
+
+
+
+No modules loaded
+rm -f stnmlist.o 
+g -traceback  -ftrapuv  -check all  -fp-stack-check  -c  stnmlist.f
+make: g: Command not found
+make: [makefile:57: stnmlist.o] Error 127 (ignored)
+o rrfs_stnmlist.x stnmlist.o    
+make: o: Command not found
+make: [makefile:53: rrfs_stnmlist.x] Error 127 (ignored)
+rm -f stnmlist.o 
