@@ -20,7 +20,7 @@ if [ ! -d $logs_dir  ]; then
   mkdir $logs_dir
 fi
 
-EXEdir=../../exec/fv3
+EXEdir=../../exec
 
 # Check final exec folder exists
 if [ ! -d $EXEdir ]; then
