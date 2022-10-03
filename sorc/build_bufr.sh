@@ -13,7 +13,7 @@ module purge
 
 source ../versions/build.ver
 
-module use -a ./modulefiles/
+module use -a ../modulefiles/
 module load build_v8.0.0-cray-intel
 
 module list
