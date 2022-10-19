@@ -29,24 +29,9 @@ module load cray-mpich/8.1.12
 
 
 # Loading nceplibs modules
-module load ip/$::env(ip_ver)
-module load bacio/$::env(bacio_ver)
 module load w3nco/$::env(w3nco_ver)
-
-module load g2/$::env(g2_ver)
-module load g2tmpl/$::env(g2tmpl_ver)
-module load jasper/$::env(jasper_ver)
-module load libpng/$::env(libpng_ver)
-module load zlib/$::env(zlib_ver)
-
-module load nemsio/$::env(nemsio_ver)
 module load bufr/$::env(bufr_ver)
-
-module load sp/$::env(sp_ver)
 module load netcdf/$::env(netcdf_ver)
-module load sigio/$::env(sigio_ver)
-module load gfsio/$::env(gfsio_ver)
-module load crtm/$::env(crtm_ver)
 
 
 
