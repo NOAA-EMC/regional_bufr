@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.17)
-project(rrfs_bufr LANGUAGES Fortran)
+# project(rrfs_bufr LANGUAGES Fortran)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/../cmake")
 
@@ -57,4 +57,3 @@ target_link_libraries(${EXENAME} my_lib
 	    NetCDF::NetCDF_Fortran)
 
 install(TARGETS ${EXENAME} RUNTIME DESTINATION ${exec_dir})
-

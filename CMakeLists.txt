@@ -17,7 +17,7 @@ message(WARNING "do we have CMAKE_MODULE_PATH = ${CMAKE_MODULE_PATH}")
 # Handle user options.
 option(BUILD_BUFREXEC "Build rrfs_bufr executable" ON)
 option(BUILD_SNDPEXEC "Build rrfs_sndp executable" ON)
-option(BUILD_STNMLISTEXEC "Build rrfs_stnmlist executable" OFF)
+option(BUILD_STNMLISTEXEC "Build rrfs_stnmlist executable" ON)
 
 
 if(NOT CMAKE_BUILD_TYPE MATCHES "^(Debug|Release|RelWithDebInfo|MinSizeRel)$")
@@ -26,6 +26,7 @@ if(NOT CMAKE_BUILD_TYPE MATCHES "^(Debug|Release|RelWithDebInfo|MinSizeRel)$")
       "Release"
       CACHE STRING "Choose the type of build." FORCE)
   set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "Debug" "Release"
+                                                 "MinSizeRel" "RelWithDebInfo")
 endif()
 
 if(NOT CMAKE_Fortran_COMPILER_ID MATCHES "^(Intel|GNU|Clang|AppleClang)$")
@@ -43,19 +44,14 @@ endif()
 
 add_subdirectory(sorc)
 
-# If desired, build the doxygen docs.
-if(ENABLE_DOCS)
-  find_package(Doxygen REQUIRED)
-  add_subdirectory(docs)
-endif()
-
 ### Package config
+
+message("the value of PROJECT_NAME is ${PROJECT_NAME}")
 include(CMakePackageConfigHelpers)
 set(CONFIG_INSTALL_DESTINATION lib/cmake/${PROJECT_NAME})
 
-export(EXPORT ${PROJECT_NAME}Exports
-  NAMESPACE ${PROJECT_NAME}::
-  FILE ${PROJECT_NAME}-targets.cmake)
+# export(EXPORT ${PROJECT_NAME}Exports
+#	NAMESPACE ${PROJECT_NAME}::FILE ${PROJECT_NAME}-targets.cmake)
 
 configure_package_config_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/cmake/PackageConfig.cmake.in ${CMAKE_BINARY_DIR}/${PROJECT_NAME}-config.cmake
@@ -70,7 +66,7 @@ write_basic_package_version_file(
 install(FILES ${CMAKE_BINARY_DIR}/${PROJECT_NAME}-config-version.cmake
   DESTINATION ${CONFIG_INSTALL_DESTINATION})
 
-install(EXPORT ${PROJECT_NAME}Exports
-  NAMESPACE ${PROJECT_NAME}::
-  FILE ${PROJECT_NAME}-targets.cmake
-  DESTINATION ${CONFIG_INSTALL_DESTINATION})
+# install(EXPORT ${PROJECT_NAME}Exports
+#  NAMESPACE ${PROJECT_NAME}::
+#  FILE ${PROJECT_NAME}-targets.cmake
+# DESTINATION ${CONFIG_INSTALL_DESTINATION})

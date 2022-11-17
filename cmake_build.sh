@@ -19,5 +19,7 @@ mkdir build && cd build
 echo execute cmake with cmake_opts $cmake_opts
 
 cmake $cmake_opts ../
+make
 
-echo past cmake
+
+
