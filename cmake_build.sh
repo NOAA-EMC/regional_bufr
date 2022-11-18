@@ -4,7 +4,7 @@ prefix="../install"
 compiler="intel"
 verbose_opt=""
 
-cmake_opts=" -DCMAKE_INSTALL_PREFIX=$prefix -Wno-dev"
+cmake_opts="-DCMAKE_INSTALL_PREFIX=$prefix"
 
 
 source ./versions/build.ver
@@ -20,6 +20,7 @@ echo execute cmake with cmake_opts $cmake_opts
 
 cmake $cmake_opts ../
 make
+make install
 
 
 
