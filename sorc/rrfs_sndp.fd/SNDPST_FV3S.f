@@ -1,4 +1,4 @@
-      SUBROUTINE SNDPST_FV3S(LM,NSTAT)
+      SUBROUTINE SNDPST_FV3S(LM,NSTAT,LENGTH)
 C$$$  MAIN PROGRAM DOCUMENTATION BLOCK
 C                .      .    .                                       .
 C MAIN PROGRAM: ETA_SNDP
@@ -97,7 +97,7 @@ C--------------------------------------------------------------------
 
       PARAMETER (NSOIL=4)
       PARAMETER (NSTP=88)
-      PARAMETER (INCR=1, LENGTH=60, NFCST=LENGTH/INCR+1)
+      PARAMETER (INCR=1)
 
       PARAMETER (NPNT=NSTP                
      &, SPVAL=-99999.0,SMISS=1.E10                
@@ -174,6 +174,8 @@ c      CALL W3TAGB('ETA_SNDP',1999,0267,0084,'NP22')
 C
 C   SET MODEL TOP PRESSURE
 C
+       NFCST=LENGTH/INCR+1
+
        PTOP=2.0*100.0
         write(0,*) 'PTOP is: ', PTOP
 
@@ -219,7 +221,7 @@ cBZHOU      LRECPR=4*(8+9+LCL1ML1*LM1+LCL1SL1)        !for RSM/ETA
  33   CONTINUE
       NREC=NREC+1      
 
-        write(0,*) 'will read NREC: ', NREC
+!        write(0,*) 'will read NREC: ', NREC
 
 !      DO 4000 JHR = 1, NFCST
 !
@@ -238,7 +240,7 @@ cBZHOU      LRECPR=4*(8+9+LCL1ML1*LM1+LCL1SL1)        !for RSM/ETA
       READ(LUNIT,REC=NREC,IOSTAT=IRR,ERR=999) IHRST,IDATE,IFCST,  
      &   ISTAT,CISTAT,(FPACK(N),N=1,9),(FPACK(N),N=10,FPACK(7))
 
-        write(0,*) 'IFCST, CISTAT, FPACK(7): ', IFCST, CISTAT, FPACK(7)
+        write(0,*) 'IFCST, ISTAT,CISTAT : ', IFCST, ISTAT,CISTAT
 
       IF(IRR.NE.0) THEN
        WRITE(*,*) NREC, '  read error, IRR=',IRR

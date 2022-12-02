@@ -78,10 +78,10 @@ C--------------------------------------------------------------------
 C
 
       character(len=3):: core
-      integer :: nlev, nstat
+      integer :: nlev, nstat,length
 
-      read(5,*) nlev,nstat
+      read(5,*) nlev,nstat,length
 
-      call SNDPST_FV3S(nlev,nstat)
+      call SNDPST_FV3S(nlev,nstat,length)
 
       end program sndpst
