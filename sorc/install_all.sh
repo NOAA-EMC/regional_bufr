@@ -20,12 +20,20 @@ if [ ! -d $logs_dir  ]; then
   mkdir $logs_dir
 fi
 
-EXEdir=../../exec
+EXEdir=../../../exec
+ALTexedir=../../../bin
 
 # Check final exec folder exists
 if [ ! -d $EXEdir ]; then
+
+if [ -d $ALTexedir ]; then
+echo "using $ALTexedir"
+EXEdir=$ALTexedir
+else
   echo "Creating $EXEdir folder"
   mkdir -p $EXEdir
+fi
+
 fi
 
 #------------------------------------
